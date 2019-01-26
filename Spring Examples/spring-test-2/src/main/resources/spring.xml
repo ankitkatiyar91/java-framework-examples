@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd"
+		default-destroy-method="destroy" default-init-method="init"
+		>
+
+	<context:annotation-config></context:annotation-config>
+	<context:component-scan base-package="com.bean"></context:component-scan>
+
+	<bean id="employee" class="com.bean.Employee">
+		<!-- <property name="name" value="Ankit"></property> -->
+		<constructor-arg name="name" value="Ankit"></constructor-arg>
+	</bean>
+
+	<bean id="name" class="java.lang.String">
+		<constructor-arg value="Ankit From Constructor"></constructor-arg>
+	</bean>
+
+	
+
+	<bean id="address" class="com.bean.Address">
+		<property name="street" value="My street"></property>
+		<property name="city" value="Delhi"></property>
+		<property name="pinCode" value="110049"></property>
+	</bean>
+
+	<bean id="person" class="com.bean.Person" >
+		<property name="name" ref="name"></property>
+		<property name="address" ref="address"></property>
+		<property name="salary" value="10000"></property>
+		<!-- <property name="type" >
+			<bean class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
+				<property name="targetClass" value="com.bean.PersonType" ></property>
+				<property name="targetField" value="Engineer" ></property>
+			</bean>
+		</property> -->
+		<property name="type" value="ENGINEER" ></property>
+	</bean>
+	
+	<import resource="alias.xml"/>
+	
+	
+	
+	<bean id="messageSource"
+	class="org.springframework.context.support.ResourceBundleMessageSource">
+	<property name="basenames">
+		<list>
+			<value>message</value>
+		</list>
+	</property>
+	</bean>
+</beans>

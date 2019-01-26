@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<!-- Define the realm you want to use to connect to your back-end security datasource: -->
+<bean id="myRealm" class="com.realm.MyRealm"></bean>
+
+<bean id="securityManager" class="org.apache.shiro.mgt.DefaultSecurityManager">
+    <!-- Single realm app.  If you have multiple realms, use the 'realms' property instead. -->
+    <property name="realm" ref="myRealm"/>
+    <property name="sessionManager.sessionListeners">
+    	<list>
+    	<ref bean="mySessionListener" />
+    	</list>
+    </property>
+</bean>
+<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+<!-- For simplest integration, so that all SecurityUtils.* methods work in all cases, -->
+<!-- make the securityManager bean a static singleton.  DO NOT do this in web         -->
+<!-- applications - see the 'Web Applications' section below instead.                 -->
+<bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+    <property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/>
+    <property name="arguments" ref="securityManager"/>
+</bean>
+
+
+<!-- Session manager-->
+<!-- <bean id="sessionManager" class="org.apache.shiro.session.mgt.DefaultSessionManager" >
+	<property name="sessionListeners">
+		<list>
+			<value>com.listner.MySessionListener</value>
+		</list>
+	</property>
+</bean> -->
+
+<bean id="mySessionListener" class="com.listner.MySessionListener" ></bean>
+</beans>
