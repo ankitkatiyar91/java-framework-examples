@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="UploadFile"
+  id="myeclipse.1332762468764"
+  context-root="/UploadFile"
+  j2ee-spec="5.0"
+  archive="UploadFile.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
