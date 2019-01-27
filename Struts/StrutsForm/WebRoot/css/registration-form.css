@@ -1,0 +1,15 @@
+.form input[type="text"],select
+{
+	width: 200px;
+	height: 25px;
+	margin-top: 5px;
+}
+.input-error
+{
+	border-color: #F00;
+}
+.errorMessage
+{
+	padding-left: 5px;
+	padding-right: 5px;
+}

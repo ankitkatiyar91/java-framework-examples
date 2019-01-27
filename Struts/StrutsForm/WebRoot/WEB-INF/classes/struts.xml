@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="default" namespace="/" extends="json-default">
+
+<global-results >
+<result name="error">error.jsp</result>
+</global-results>
+
+		<action name="userlogin" class="com.ask.action.UserLogin" method="execute">
+		<result name="success">login.jsp</result>
+		<result name="input"> login.jsp</result>
+		</action>
+		<action name="register" class="com.ask.action.UserRegistrationForm" method="execute">
+		<result name="success">register.jsp</result>
+		</action>
+		<action name="userregister" class="com.ask.action.UserRegister" method="execute">
+		<result name="input" >register.jsp</result>
+		<result name="success" >login.jsp</result>
+		</action>
+		
+		<action name="getCountry" class="com.ask.action.UserRegistrationForm" method="getCountry">
+		<result type="json">
+               <param name="root">country</param>
+        </result>
+		</action>
+		<action name="test" class="com.ask.action.HtmlTest">
+		<result name="input" >formhtml.jsp</result>
+		<result name="success">login.jsp</result>
+		</action>
+		</package>
+
+</struts>    
