@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="WebXls"
+  id="myeclipse.1348559927460"
+  context-root="/WebXls"
+  j2ee-spec="5.0"
+  archive="WebXls.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN"
+"http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport name=”EmployeeReport_SuhasJavaBlog”>
+<queryString>
+<![CDATA[select First_Name, Last_Name from employee e]]>
+</queryString>
+<field name="First_Name" />
+<field name="Last_Name" />
+<title>
+<band height="50″>
+<staticText>
+<reportElement x="0" y="0" width="180" height="15"/>
+<textElement/>
+<text><![CDATA[Jasper Report - SuhasJavaBlog]]></text>
+</staticText>
+</band>
+</title>
+<pageHeader>
+<band height="30">
+<staticText>
+<reportElement x="0" y="0" width="69" height="24" />
+<textElement verticalAlignment="Bottom" />
+<text>
+<![CDATA[First Name: ]]>
+</text>
+</staticText>
+<staticText>
+<reportElement x="140" y="0" width="79" height="24" />
+<text>
+<![CDATA[Last Name: ]]>
+</text>
+</staticText>
+</band>
+</pageHeader>
+<detail>
+<band height="30">
+<textField>
+<reportElement x="0" y="0" width="69" height="24" />
+<textFieldExpression>
+<![CDATA[last_name]]>
+</textFieldExpression>
+</textField>
+<textField>
+<reportElement x="140" y="0" width="69" height="24" />
+<textFieldExpression>
+<![CDATA[first_name]]>
+</textFieldExpression>
+</textField>
+</band>
+</detail>
+</jasperReport>

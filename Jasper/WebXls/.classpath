@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
+	<classpathentry kind="lib" path="E:/lib/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="E:/lib/commons-collections-2.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/lib/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="E:/lib/commons-javaflow-20060411.jar"/>
+	<classpathentry kind="lib" path="E:/lib/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="E:/lib/itext-2.1.5.jar"/>
+	<classpathentry kind="lib" path="E:/lib/jasper-compiler-jdt-5.5.15.jar"/>
+	<classpathentry kind="lib" path="E:/lib/jasperreports-4.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/MySQL/MySQL Tools for 5.0/java/lib/mysql-connector-java-5.0.4-bin.jar"/>
+	<classpathentry kind="lib" path="E:/lib/poi-3.6-20100309.jar"/>
+	<classpathentry kind="output" path="WebRoot/WEB-INF/classes"/>
+</classpath>

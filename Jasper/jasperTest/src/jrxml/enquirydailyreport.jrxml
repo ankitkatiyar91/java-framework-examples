@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="enquirydailyreport"  pageWidth="1150" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="504"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="startDate" class="java.lang.String" />
+	<parameter name="endDate" class="java.lang.String" />
+	<queryString>
+		<![CDATA[SELECT `enquiry_id`, CONCAT_WS(' ', `first_name`, COALESCE(`middle_name`,''), `last_name`)AS name,mobile_no, `enquiry.gender`,  `email`,  `reference_type`, `college`, CONCAT_WS(' ',`emp_firstname`, COALESCE(`midname`,''), `emp_lastname`) AS emp FROM `enquiry_details` WHERE creation_time between $P{startDate} AND $P{endDate}]]>
+	</queryString>
+	<field name="enquiry_id" class="java.lang.String"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="mobile_no" class="java.lang.String"/>
+	<field name="enquiry.gender" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="reference_type" class="java.lang.String"/>
+	<field name="college" class="java.lang.String"/>
+	<field name="emp" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement  x="0" y="0" width="107" height="79"/>
+				<imageExpression><![CDATA["C:\\Users\\brain\\Desktop\\logo.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement  x="170" y="12" width="370" height="51"/>
+				<textElement>
+					<font size="36" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Daily Enquiry Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement  x="79" y="0" width="91" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Enquiry ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="182" y="0" width="113" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="308" y="0" width="58" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gender]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="387" y="0" width="52" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="483" y="0" width="111" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EMail]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="617" y="0" width="170" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[College]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="808" y="0" width="141" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Attended By]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="977" y="0" width="61" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ref Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement  x="0" y="0" width="59" height="20"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[S No.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement  x="0" y="0" width="59" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[""+$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="79" y="0" width="91" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{enquiry_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="182" y="0" width="118" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="387" y="0" width="52" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{mobile_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="308" y="0" width="58" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{enquiry.gender}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="483" y="0" width="111" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="617" y="0" width="170" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{college}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="808" y="0" width="141" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{emp}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement  x="977" y="0" width="101" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{reference_type}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
