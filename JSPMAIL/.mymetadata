@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="JSPMAIL"
+  id="myeclipse.1335873040055"
+  context-root="/JSPMAIL"
+  j2ee-spec="5.0"
+  archive="JSPMAIL.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+
