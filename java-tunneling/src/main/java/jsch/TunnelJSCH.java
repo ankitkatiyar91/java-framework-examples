@@ -20,8 +20,8 @@ public class TunnelJSCH {
 
 	public void go() throws Exception {
 		String host = "bastion-server-host";
-		String user = "colp";
-		String password = "devpass";
+		String user = "username";
+		String password = "password";
 		int port = 22;
 
 		int tunnelLocalPort = 8000;
