@@ -24,7 +24,7 @@
 
 		<!-- Test -->
 		<junit.version>4.11</junit.version>
-
+		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
