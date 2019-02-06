@@ -30,12 +30,14 @@
 		<property name="name" ref="name"></property>
 		<property name="address" ref="address"></property>
 		<property name="salary" value="10000"></property>
+		<!--  OLD WAY -->
 		<!-- <property name="type" >
 			<bean class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean" >
 				<property name="targetClass" value="com.bean.PersonType" ></property>
-				<property name="targetField" value="Engineer" ></property>
+				<property name="targetField" value="ENGINEER" ></property>
 			</bean>
 		</property> -->
+		<!-- Better Approach -->
 		<property name="type" value="ENGINEER" ></property>
 	</bean>
 	
