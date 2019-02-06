@@ -39,7 +39,6 @@ public class DBFileController {
 	public ModelAndView uploadFile(ModelAndView model,
 			@RequestParam(required = false) MultipartFile file,
 			@RequestParam(required = false) String name, FileModel command,
-			BindException exception,
 			HttpServletRequest request) throws IOException {
 		System.out.println("FileUpload.uploadFile()");
 		System.out.println("name-" + name + " File->" + file + " command->"
@@ -63,10 +62,7 @@ public class DBFileController {
 
 				model.addObject("image", fileModel.getId());
 			
-		}else {
-			exception.reject("exception.station.submitFailure", "Select a valid file");
 		}
-
 		model.setViewName("dbfile/index");
 		return model;
 	}
