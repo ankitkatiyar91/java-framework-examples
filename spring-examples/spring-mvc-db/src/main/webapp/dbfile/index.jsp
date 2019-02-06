@@ -26,7 +26,7 @@
 		<div>
 		Uploaded File: <c:out value="${image}"></c:out><br>
 		<hr>
-		<img height="400" width="400" alt='Unable to get Image' src="<c:url value="/images/${image}" ></c:url>">
+		<img height="400" width="400" alt='Unable to get Image' src="<c:url value="/dbfile/image/${image}" ></c:url>">
 		</div>
 	</c:if>
 </body>

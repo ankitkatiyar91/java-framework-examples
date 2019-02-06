@@ -98,7 +98,7 @@ public class DBFileController {
 		System.out.println("DBFileController.handleError() " + req.getRequestURL());
 		// ExceptionHandlerExceptionResolver
 		// resolver=(ExceptionHandlerExceptionResolver)handler;
-
+		exception.printStackTrace();
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("exception", exception);
 		mav.addObject("url", req.getRequestURL());
