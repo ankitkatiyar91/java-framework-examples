@@ -20,13 +20,13 @@ public class App {
 		 * It will set create all beans on create
 		 */
 		AbstractApplicationContext context=new ClassPathXmlApplicationContext("spring.xml");
-		context.registerShutdownHook();
+		//context.registerShutdownHook();
 		
 		//System.out.println("Context created "+context);
 		/*shape=(Shape) context.getBean("traingle");
 		shape.draw();*/
 		shape=(Shape) context.getBean("circle");
-		shape.draw();
+		//shape.draw();
 		System.out.println("message->"+context.getMessage("greeting", new Object[]{"Ankit"}, null));
 		
 		

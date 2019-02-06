@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-Hello Your message ${message}
+Hello Your message from controller attribute is: <b>${message}</b> 
 </body>
 </html>

@@ -24,17 +24,17 @@
 	<bean name="shape" abstract="true"  >
 		<property name="center" ref="pointA" ></property>
 	</bean>
-	<!-- <bean name="circle" class="com.bean.Circle"  init-method="myInit" destroy-method="myDestroy" >	
-	</bean> -->
+	<bean name="circle" class="com.bean.Circle"  init-method="myInit" destroy-method="myDestroy" >	
+	</bean>
 	<bean id="pointA" class="com.bean.Point">
 			<property name="x" value="15"></property>
 			<property name="y" value="20"></property>
 	</bean>
 	
-	<!-- <bean name="center" class="com.bean.Point" id="center" >
+	<bean name="center" class="com.bean.Point" id="center" >
 			<property name="x" value="${center.x}"></property>
 			<property name="y" value="${center.y}"></property>
-	</bean> -->
+	</bean>
 	
 	<!-- <bean class="com.bean.MyPostProcessor" ></bean> 
 	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" ></bean>-->

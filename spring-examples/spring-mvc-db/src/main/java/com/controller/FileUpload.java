@@ -12,6 +12,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.WebDataBinder;
@@ -41,7 +42,8 @@ public class FileUpload implements Validator, ApplicationContextAware {
 		System.out.println("name-" + name + " File->" + file + " command->"
 				+ command);
 
-		if (file != null) {
+		
+		if (file != null && !StringUtils.isEmpty(file.getOriginalFilename())) {
 			System.out.println("file->" + file.getOriginalFilename() + "  "
 					+ file.getName());
 			@SuppressWarnings("deprecation")

@@ -22,11 +22,12 @@
 		<span><form:errors path="file" cssClass="error" /> </span>
 
 	</form:form>
-	
-	<div>
-	Uploaded File <c:out value="${file}"></c:out>
-	
-	<img height="200" width="200" alt='Unable to get Image' src="<c:url value="/images/${file}" ></c:url>">
-	</div>
+	<c:if test="${file !=null}">
+		<div>
+		Uploaded File: <c:out value="${file}"></c:out><br>
+		<hr>
+		<img height="400" width="400" alt='Unable to get Image' src="<c:url value="/images/${file}" ></c:url>">
+		</div>
+	</c:if>
 </body>
 </html>

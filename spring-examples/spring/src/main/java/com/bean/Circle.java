@@ -12,11 +12,11 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.MessageSourceAware;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class Circle implements Shape, InitializingBean, DisposableBean,
 		ApplicationContextAware, BeanNameAware,MessageSourceAware {
 
-	@Autowired
+	//@Autowired(required=false)
 	private Point center;
 
 	public void draw() {
@@ -27,7 +27,7 @@ public class Circle implements Shape, InitializingBean, DisposableBean,
 		return center;
 	}
 
-	@Required
+	
 	public void setCenter(Point center) {
 		System.out.println("Circle: center Point set");
 		this.center = center;

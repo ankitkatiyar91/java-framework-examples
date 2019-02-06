@@ -3,17 +3,15 @@ package com.controller;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.Errors;
+import org.springframework.validation.BindException;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,7 +19,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.support.ByteArrayMultipartFileEditor;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver;
 
 import com.domain.FileModel;
 
@@ -42,6 +39,7 @@ public class DBFileController {
 	public ModelAndView uploadFile(ModelAndView model,
 			@RequestParam(required = false) MultipartFile file,
 			@RequestParam(required = false) String name, FileModel command,
+			BindException exception,
 			HttpServletRequest request) throws IOException {
 		System.out.println("FileUpload.uploadFile()");
 		System.out.println("name-" + name + " File->" + file + " command->"
@@ -65,6 +63,8 @@ public class DBFileController {
 
 				model.addObject("image", fileModel.getId());
 			
+		}else {
+			exception.reject("exception.station.submitFailure", "Select a valid file");
 		}
 
 		model.setViewName("dbfile/index");
@@ -74,8 +74,7 @@ public class DBFileController {
 	@InitBinder
 	protected void initBinder(WebDataBinder binder) {
 		// Convert multipart object to byte[]
-		binder.registerCustomEditor(byte[].class,
-				new ByteArrayMultipartFileEditor());
+		binder.registerCustomEditor(byte[].class, new ByteArrayMultipartFileEditor());
 
 	}
 
@@ -88,11 +87,9 @@ public class DBFileController {
 	}
 
 	@RequestMapping(value = "/image/{id}")
-	public @ResponseBody
-	byte[] showImage(@PathVariable Integer id) {
+	public @ResponseBody byte[] showImage(@PathVariable Integer id) {
 		System.out.println("Display image with Id->" + id);
-		FileModel model = (FileModel) sessionFactory.openSession().get(
-				FileModel.class, id);
+		FileModel model = (FileModel) sessionFactory.openSession().get(FileModel.class, id);
 		return model.getFile();
 	}
 
@@ -102,9 +99,10 @@ public class DBFileController {
 
 	@ExceptionHandler
 	public ModelAndView handleError(HttpServletRequest req, Exception exception) {
-		System.out.println("DBFileController.handleError() "+req.getRequestURL());
-		//ExceptionHandlerExceptionResolver resolver=(ExceptionHandlerExceptionResolver)handler;
-		
+		System.out.println("DBFileController.handleError() " + req.getRequestURL());
+		// ExceptionHandlerExceptionResolver
+		// resolver=(ExceptionHandlerExceptionResolver)handler;
+
 		ModelAndView mav = new ModelAndView();
 		mav.addObject("exception", exception);
 		mav.addObject("url", req.getRequestURL());
