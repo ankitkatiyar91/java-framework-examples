@@ -27,14 +27,14 @@
 	<security:http auto-config="true"  >
 		<security:intercept-url pattern="/login*" access="isAnonymous()" />
 	    <security:intercept-url pattern="/**" access="isAuthenticated()"/>
-		<security:form-login login-page="/login" login-processing-url="/login-user" authentication-failure-url="/login?error=true" />
+		<security:form-login username-parameter="id" login-page="/login" login-processing-url="/login-user" authentication-failure-url="/login?error=true" />
 		<security:csrf disabled="true" />
 		<security:logout logout-success-url="/"  />
 	</security:http>
 
 	<security:authentication-manager>
 		<security:authentication-provider>
-			<security:user-service>
+			<security:user-service >
 				<security:user name="admin" password="{noop}admin" authorities="ROLE_USER" />
 			</security:user-service>
 		</security:authentication-provider  >
