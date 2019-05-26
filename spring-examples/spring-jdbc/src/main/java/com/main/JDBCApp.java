@@ -23,14 +23,13 @@ public class JDBCApp {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext(
-				"spring.xml");
-		/*
-		 * getDataFromSql(context); getDataFromJDBCTemplate(context);
-		 * getDataFromHibernate(context);
-		 * getDataFromJDBCDaoSupportImpl(context);
-		 * getDataFromHibernateTemplateDao(context);
-		 */
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		getDataFromSql(context);
+		getDataFromJDBCTemplate(context);
+		getDataFromHibernate(context);
+		getDataFromJDBCDaoSupportImpl(context);
+		getDataFromHibernateTemplateDao(context);
+
 		getDataFromHibernate(context);
 
 	}
@@ -48,8 +47,10 @@ public class JDBCApp {
 	}
 
 	protected static void testTransactionManager(ApplicationContext context) {
-	/*	HibernateDao dao = context.getBean(HibernateDao.class);
-		dao.testTransaction();*/
+		/*
+		 * HibernateDao dao = context.getBean(HibernateDao.class);
+		 * dao.testTransaction();
+		 */
 	}
 
 	protected static void getDataFromHibernate(ApplicationContext context) {
@@ -57,17 +58,13 @@ public class JDBCApp {
 		dao.getData();
 	}
 
-	protected static void getDataFromJDBCDaoSupportImpl(
-			ApplicationContext context) {
-		JDBCDaoSupportImpl impl = context.getBean("jdbcdaosupportimpl",
-				JDBCDaoSupportImpl.class);
+	protected static void getDataFromJDBCDaoSupportImpl(ApplicationContext context) {
+		JDBCDaoSupportImpl impl = context.getBean("jdbcdaosupportimpl", JDBCDaoSupportImpl.class);
 		impl.getData();
 	}
 
-	protected static void getDataFromHibernateTemplateDao(
-			ApplicationContext context) {
-		HibernateTemplateDao dao = context.getBean("hibernatetemplatedao",
-				HibernateTemplateDao.class);
+	protected static void getDataFromHibernateTemplateDao(ApplicationContext context) {
+		HibernateTemplateDao dao = context.getBean("hibernatetemplatedao", HibernateTemplateDao.class);
 		dao.getData();
 
 	}

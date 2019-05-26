@@ -4,7 +4,7 @@
 package com.annotation;
 
 /**
- * @author ipg
+ * @author Ankit Singh Katiyar
  *
  */
 public @interface Loggable {
