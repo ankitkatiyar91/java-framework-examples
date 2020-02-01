@@ -1,6 +1,7 @@
 package ask;
 
 import java.io.File;
+import java.util.Date;
 import java.util.HashMap;
 
 import net.sf.jasperreports.engine.JRException;
@@ -12,6 +13,7 @@ import net.sf.jasperreports.engine.JasperRunManager;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.view.JasperDesignViewer;
 import ask.bean.BeanFactory;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  * Hello world!
@@ -51,7 +53,7 @@ public class App
 			/*
 			 * View design
 			 */
-			JasperDesignViewer.viewReportDesign("resources/beans.jrxml", true);
+//			JasperDesignViewer.viewReportDesign("resources/beans.jrxml", true);
 			
 		} catch (JRException e) {
 			e.printStackTrace();

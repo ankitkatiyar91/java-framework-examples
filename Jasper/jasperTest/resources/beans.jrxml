@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.11.0.final using JasperReports Library version 6.11.0-0c4056ccaa4d25a5a8c45672d2f764ea3498bebb  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="beans" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="061b0264-7bc5-43c8-afad-f6305010f60f">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
@@ -22,41 +23,80 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="110" splitType="Stretch">
 			<staticText>
 				<reportElement x="148" y="0" width="266" height="29" uuid="42d5bd5b-ac3b-45c3-a607-3187436d61e4"/>
 				<textElement textAlignment="Justified">
 					<font size="14" isBold="true"/>
 				</textElement>
-				<text><![CDATA[My First DataSource Report]]></text>
+				<text><![CDATA[My Report generated from the data from App]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="280" y="60" width="80" height="25" uuid="8fcec53e-649d-4468-895c-723569803105"/>
+				<textElement>
+					<font fontName="Apple Chancery" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Generated On: "]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MM-YYYY hh:mm:ss aa">
+				<reportElement x="370" y="60" width="175" height="30" uuid="0d9b47b2-383b-4f33-972b-b354c2970f25"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch">
+		<band height="110" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="138" height="20" uuid="82529169-513b-467b-a297-292d60c2fc94"/>
-				<text><![CDATA[content]]></text>
+				<reportElement mode="Opaque" x="260" y="90" width="140" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#91F584" uuid="5d67b4a1-09cf-4dcb-9663-e76c6ea4424b"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[User Roles]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="138" y="0" width="138" height="20" uuid="7d38eb55-74e8-4e85-9056-9173f0845c79"/>
-				<text><![CDATA[user]]></text>
+				<reportElement mode="Opaque" x="122" y="90" width="140" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#91F584" uuid="7d38eb55-74e8-4e85-9056-9173f0845c79"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Username]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="276" y="0" width="138" height="20" uuid="5d67b4a1-09cf-4dcb-9663-e76c6ea4424b"/>
-				<text><![CDATA[roles]]></text>
+				<reportElement mode="Opaque" x="398" y="90" width="140" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#91F584" uuid="5e21cb4e-79a0-4da5-96ed-c0d9d8761332"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Name]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="414" y="0" width="138" height="20" uuid="5e21cb4e-79a0-4da5-96ed-c0d9d8761332"/>
-				<text><![CDATA[name]]></text>
+				<reportElement mode="Opaque" x="-16" y="90" width="140" height="20" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" forecolor="#000000" backcolor="#91F584" uuid="82529169-513b-467b-a297-292d60c2fc94"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Content Column]]></text>
 			</staticText>
 		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="8" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="28" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="138" height="20" uuid="f2875af3-8bef-4c17-b4dd-301d219fecd8"/>
 				<textFieldExpression><![CDATA[$F{content}]]></textFieldExpression>
