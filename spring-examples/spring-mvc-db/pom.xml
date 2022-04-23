@@ -9,7 +9,7 @@
 	<name>spring-mvc-db Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<spring.version>4.0.5.RELEASE</spring.version>
+		<spring.version>5.3.19</spring.version>
 		<junit.version>4.11</junit.version>
 		<jdk.version>1.8</jdk.version>
 		<java.version>1.8</java.version>
